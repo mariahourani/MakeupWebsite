@@ -1,7 +1,7 @@
-import product1 from "./Assets/perfectliner.jpg"
-import product2 from "./Assets/product-1.jpg"
+import product1 from "../Assets/perfectliner.jpg"
+import product2 from "../Assets/product-1.jpg"
 
-export const products = [
+ const products = [
     {
         id:1,
         productName:"Eyeliner",
@@ -16,3 +16,4 @@ export const products = [
         productImage : product2,
     },
 ]
+export default products;
