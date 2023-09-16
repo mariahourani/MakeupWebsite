@@ -1,16 +1,37 @@
 import React from 'react';
-
-import Link from 'next/Link';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import "../Styles/Products.css";
+import { FaCartArrowDown } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import HeroSlider, { Slide } from 'hero-slider';
+import {ShopContext} from '../context/ShopContext';
+import { useContext } from 'react';
 
-const Product = ({product :{image ,name, slug, price}}) =>{
+const Product = (props) =>{
+  const {id, productName, price, productImage} = props.data;
+  
+  const {addToCart,cartItems} = useContext(ShopContext);
+
+  const cartItemAmount = cartItems[id];
+  
   return (
-    <div>
-        <Router>
-        
-        </Router>
-        
-      
+    <div className='product'>
+      <img className='product-image' src={productImage}/>
+      <div className='description'>
+        <p>
+          <b>
+            {productName}
+          </b>
+        </p>
+
+        <p className='product-price'>
+          ${price}
+        </p>
+      </div>
+      <HiOutlineShoppingCart onClick={() => addToCart(id)} />
+        {cartItemAmount > 0 && <span className='cart-item-amount'>{cartItemAmount}</span>}
+      <FaRegHeart  className='icons'/>
     </div>
   )
 }

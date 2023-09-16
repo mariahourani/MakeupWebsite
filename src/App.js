@@ -6,6 +6,7 @@ import NewItems from './components/NewItems';
 import foundation from './Assets/foundation.jpg';
 import mascara from './Assets/mascara.jpg';
 import {ProductList} from './components/ProductList';
+import ShopContext from './context/ShopContext';
 
 const App=()=> {
   const handleSearch = (searchQuery) => {
@@ -18,11 +19,14 @@ const App=()=> {
   ];
   return (
     <div className="App">
-
-       <SearchBar onSearch={handleSearch} />
+      <ShopContext>
+      <SearchBar onSearch={handleSearch} />
       <Header/>
       <NewItems props={slideshowImages}/>
       <ProductList/>
+      </ShopContext>
+
+    
     </div>
   );
 }
