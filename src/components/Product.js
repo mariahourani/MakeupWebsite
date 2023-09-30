@@ -29,9 +29,9 @@ const Product = (props) =>{
           ${price}
         </p>
       </div>
+      <FaRegHeart  className='icons'/>
       <HiOutlineShoppingCart onClick={() => addToCart(id)} />
         {cartItemAmount > 0 && <span className='cart-item-amount'>{cartItemAmount}</span>}
-      <FaRegHeart  className='icons'/>
     </div>
   )
 }

@@ -1,33 +1,24 @@
 import React from 'react';
+import SearchBar from './SearchBar';
+import '../App.css';
+import {Link} from "react-router-dom";
+import NavBar from "./NavBar";
 import '../App.css';
 
-const Header=()=> {
+const Header = () => {
+    const handleSearch = (searchQuery) => {
+        // Perform search logic here
+        console.log('Searching for:', searchQuery);
+      };
   return (
     <div>
-      <nav className="navbar">
-        <ul className="navbar-list">
-          <li className="navbar-item">
-            <a href="Home">Home</a>
-          </li>
-          <li className="navbar-item">
-            <a href="SkinCare">SkinCare</a>
-          </li>
-          <li className="navbar-item">
-            <a href="Face">Face</a>
-          </li>
-          <li className="navbar-item">
-            <a href="Eyes">Eyes</a>
-          </li>
-          <li className="navbar-item">
-            <a href="Lips">Lips</a>
-          </li>
-          <li className="navbar-item">
-            <a href="Nails">Nails</a>
-          </li>
-        </ul>
-      </nav>
+        <Link to="/">
+        </Link>
+        <SearchBar onSearch={handleSearch} />
+        <NavBar/>
+        <Header/>
     </div>
-  );
-}
 
-export default Header
+  )
+}
+export default Header;

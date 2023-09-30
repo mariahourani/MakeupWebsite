@@ -30,9 +30,7 @@ const SearchBar = ({ onSearch }) => {
     <button className="search-button" type="submit">
       <FaSearch />
     </button>
-    <FaHeart className="heart" size={30}/>
-    <RiUserFill className="person"size={30} />
-    <FaCreditCard className="cardicon" size={30} />
+  
   </form>
   );
 };
