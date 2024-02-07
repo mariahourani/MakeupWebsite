@@ -12,16 +12,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 .search-form {
   display: flex;
   align-items: center;
 }
 
-
 .search-input {
   padding: 8px;
- 
-  /*order-radius: 4px;*/
   font-size: 14px;
   width: 20pc;
 }
@@ -35,16 +33,13 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.icon {
- 
-}
 
 .heart {
   position: absolute;
   right: 110px;
   cursor: pointer;
-  /*margin-right: 30px;*/
 }
+
 .cardicon{
   position: absolute;
   cursor: pointer;
@@ -55,7 +50,6 @@
   position: absolute;
   cursor: pointer;
   right: 20px; 
-
 }
 
 .App-header {
@@ -72,32 +66,56 @@
 .App-link {
   color: #61dafb;
 }
+
 .navbar {
   background-color: #000000;
-  padding: 10px;
-  margin-top: 90px;
+  margin-top: 5%;
 }
 
 .navbar-list {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  padding: 0;
   font-size: large;
 }
 
-.navbar-item {
-  margin-right: 10px;
+.navbar-item a:hover {
+  color: grey; 
 }
 
-.navbar-item:hover a {
-  background-color: grey; /* Change the color to "gris" on hover */
- 
-}
 .navbar-item a {
   text-decoration: none;
   color: #ffffff;
-  padding: 26px;
+  font-size: 100%;
+
+}
+.custom-modal-width .modal-dialog {
+  max-width: 800px;
+}
+
+.custom-modal-width .modal-content {
+  width: 100%;
+}
+
+.custom-modal-body {
+  display: flex;
+}
+
+.custom-image {
+  width: 60%;
+  margin-right: 10%; 
+}
+
+.details {
+  flex: 1;
+}
+
+.details p {
+  margin-bottom: 10%;
+}
+
+.btn-group {
+  margin-top: 10%; 
 }
 
 .slideshow {
@@ -112,13 +130,12 @@
   transition: transform 0.5s ease-in-out;
 }
 
-/* To center the image vertically */
 .slideshow img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-/* NewItems.css */
+
 .custom-slide {
   width:70%; /* Set the desired width */
   height: 10%; /* Set the desired height */
@@ -127,4 +144,6 @@
   justify-content: center; /* Horizontally center content */
 }
 
-
+.custom-modal-width {
+  width: 800px; /* Set your desired width */
+}

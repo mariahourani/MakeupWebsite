@@ -20,33 +20,58 @@
   height: 500px;
   margin-top: 4px; /* Add margin to the bottom of each product */
 }
-
+.slider-container {
+  height: 30%; /* or use any other value that fits your design */
+}
+.newitemimage-wrapper {
+  height: 30%;
+}
+.newitemimage {
+  width: 10%;
+  height: 10%;
+}
+.newitemimage {
+  width: 100%; 
+  height: 20%;
+  cursor: pointer;
+}
 .shop{
   margin-top: 90px; 
 }
-.newitemimage {
-  width: 100%; /* Set the desired width */
-  height: 840px; /* Set the desired height */
-  cursor: pointer;
+.product {
+  position: relative;
 }
-/* Add some space between the slides */
-  .product-image {
-    width: 100%;
-    height: 320px;
-    border-radius: 10px;
-    transition: opacity 0.3s ease;
-  }
-  
-  .product-price {
-    font-size: 1.3rem;
-    color: #000;
-    margin: 15px 0;
-  }
-  
-  .icons {
-    font-size: 36px;
-    color: #ff5722; /* Adjust to your brand color */
-  }
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: filter 0.3s ease;
+}
+
+.product.hovered .product-image {
+  filter: grayscale(70%);
+}
+
+.icons-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.icons-container button {
+  background: transparent;
+  border: none;
+  margin: 5px;
+}
+
+.icons {
+  font-size: 24px;
+  color: #fff;
+}
+
   
   .product:hover {
     transform: scale(1.08); /* Zoom in slightly on hover */

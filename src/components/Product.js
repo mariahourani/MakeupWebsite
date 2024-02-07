@@ -1,38 +1,44 @@
-import React from 'react';
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import "../Styles/Products.css";
-import { FaCartArrowDown } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { HiOutlineShoppingCart } from "react-icons/hi";
-import HeroSlider, { Slide } from 'hero-slider';
-import {ShopContext} from '../context/ShopContext';
+import { FaRegHeart } from "react-icons/fa";
+import { ShopContext } from '../context/ShopContext';
 import { useContext } from 'react';
+import ProductDetails from './ProductDetails';
 
-const Product = (props) =>{
-  const {id, productName, price, productImage} = props.data;
-  
-  const {addToCart,cartItems} = useContext(ShopContext);
-
+const Product = (props) => {
+  const { id, productName, price, productImage } = props.data;
+  const { addToCart, cartItems } = useContext(ShopContext);
   const cartItemAmount = cartItems[id];
-  
+
+  const [showProductDetails,setShowProductDetails]=useState(false)
+  const handleClick = () => {
+    setShowProductDetails(true);
+  };
+
   return (
-    <div className='product'>
-      <img className='product-image' src={productImage}/>
+    <div className='product' onClick={handleClick}>
+      <img className='product-image' src={productImage} alt={productName} />
       <div className='description'>
         <p>
-          <b>
-            {productName}
-          </b>
+          <b>{productName}</b>
         </p>
-
-        <p className='product-price'>
-          ${price}
-        </p>
+        <p className='product-price'>${price}</p>
       </div>
-      <FaRegHeart  className='icons'/>
-      <HiOutlineShoppingCart onClick={() => addToCart(id)} />
-        {cartItemAmount > 0 && <span className='cart-item-amount'>{cartItemAmount}</span>}
+      <FaRegHeart className='icons' />
+      <HiOutlineShoppingCart onClick={() => addToCart(id)} className='icons' />
+
+      {showProductDetails &&(
+        <ProductDetails
+          id={id}
+          productName ={productName}
+          price={price}
+          productImage={productImage}        />
+      )}
+    
+    
     </div>
-  )
-}
+  );
+};
+
 export default Product;
